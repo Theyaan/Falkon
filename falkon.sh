@@ -2,8 +2,8 @@
 
 # EmulationStation Launcher for Falkon on ArkOS (R36S)
 
-APP_DIR="/opt/r36ultra-app"
-CONTROLLER_BIN="$APP_DIR/r36s-falkon-controller"
+APP_DIR="/opt/falkon-for-arkos"
+CONTROLLER_BIN="$APP_DIR/falkon-for-arkos"
 
 if [ ! -f "$CONTROLLER_BIN" ]; then
     echo "Error: $CONTROLLER_BIN not found. Please run install.sh first."
@@ -27,6 +27,6 @@ sleep 1
 falkon
 
 # Once Falkon exits, kill the controller daemon
-sudo killall r36s-falkon-controller
+sudo killall falkon-for-arkos
 
 exit 0
