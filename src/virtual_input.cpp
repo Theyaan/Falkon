@@ -82,7 +82,7 @@ void emit_sync(int fd) {
 
 int main(int argc, char* argv[]) {
     if (argc > 1 && strcmp(argv[1], "--help") == 0) {
-        std::cout << "Usage: r36s-falkon-controller\n";
+        std::cout << "Usage: falkon-for-arkos\n";
         return 0;
     }
 
