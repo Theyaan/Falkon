@@ -19,17 +19,14 @@ export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_ALWAYS_SET_MODE=1
 
 # Start the virtual mouse/keyboard daemon in the background with sudo to ensure uinput access
+# We use sudo -b to run it in background and we will kill it by name since killing the sudo process pid won't kill the child reliable.
 sudo "$CONTROLLER_BIN" &
-CONTROLLER_PID=$!
-
-# Wait a moment for uinput device to initialize
 sleep 1
 
 # Launch Falkon
 falkon
 
 # Once Falkon exits, kill the controller daemon
-sudo kill $CONTROLLER_PID
-wait $CONTROLLER_PID 2>/dev/null
+sudo killall r36s-falkon-controller
 
 exit 0
